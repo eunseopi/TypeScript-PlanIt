@@ -17,7 +17,7 @@
 7. **`api`** 
    - api 관련 로직 모듈 파일 및 auth 와 같은 인증 파일 모아두는 폴더
 8. **`context`** or **`store`**
-   - 이 부분은 redux** 나 Context API 사용 시 쓸건데 추후 결정! (전역 상태 관리)
+   - 이 부분은 redux** 나 Context API 사용 시 쓸건데 추후 결정! (전역 상태 관리).
 
 
 ## 📈Git Flow
