@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import Register_header from "../components/register/RegisterHeader.jsx";
-import Register_body from "../components/register/BasicInform.jsx"
-import EmailVerification from "../components/register/EmailVerification.jsx";
-import ProfileSetting from "../components/register/ProfileSetting.jsx";
+import Register_header from "../components/register/header/RegisterHeader.jsx";
+import Register_body from "../components/register/body/BasicInform.jsx"
+import EmailVerification from "../components/register/body/EmailVerification.jsx";
+import ProfileSetting from "../components/register/body/ProfileSetting.jsx";
 
 
 const register = () => {

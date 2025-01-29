@@ -1,8 +1,9 @@
 import styled from '@emotion/styled'
 import {ChevronLeft} from "lucide-react";
 import { useState } from "react";
-import profile from '../../assets/profile.png'
+import profile from '../../../assets/profile.png'
 import {useNavigate} from "react-router-dom";
+import Button from '../../commons/Button/Button.jsx'
 
 const Container = styled.div`
     padding: 20px;
@@ -107,6 +108,7 @@ const Select = styled.select`
 const GenderContainer = styled.div`
     display: flex;
     gap: 16px;
+    margin-bottom: 20px;
 `;
 
 const GenderLabel = styled.label`
@@ -115,22 +117,6 @@ const GenderLabel = styled.label`
     gap: 4px;
 `;
 
-const SubmitButton = styled.button`
-    width: 100%;
-    padding: 12px;
-    background-color: #3b82f6;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 16px;
-
-    &:hover {
-        background-color: #2563eb;
-    }
-`;
 
 const ProfileSetting = () => {
     const [nickname, setNickname] = useState("");
@@ -209,7 +195,7 @@ const ProfileSetting = () => {
                 </GenderContainer>
             </div>
 
-            <SubmitButton onClick={handleSubmit}>가입하기</SubmitButton>
+            <Button type="submit" variant="primary" size="large" fullWidth onClick={handleSubmit}>가입하기</Button>
         </Container>
     )
 }

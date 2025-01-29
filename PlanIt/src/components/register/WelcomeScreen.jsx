@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "@emotion/styled";
 import passport from "../../assets/Passport.png"
 import { keyframes } from "@emotion/react";
+import Button from '../commons/Button/Button.jsx'
 
 const rotate = keyframes`
     from {
@@ -40,20 +41,6 @@ const Subtitle = styled.p`
     margin-bottom: 24px;
 `;
 
-const Button = styled.button`
-    background: white;
-    color: black;
-    padding: 12px 24px;
-    width: 80%;
-    border-radius: 24px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-
-    &:hover {
-        opacity: 0.8;
-    }
-`;
 
 const WelcomeScreen = () => {
     const navigate = useNavigate();
@@ -63,7 +50,7 @@ const WelcomeScreen = () => {
             <Image src={passport} alt="Passport Icon" />
             <Title>환영합니다!</Title>
             <Subtitle>플랜잇과 함께 여행 플랜을 준비해요</Subtitle>
-            <Button onClick={() => navigate("/")}>돌아가기</Button>
+            <Button type="submit" variant="whiteDark" size="large" middleWidth onClick={() => navigate("/")}>돌아가기</Button>
         </Container>
     );
 }
