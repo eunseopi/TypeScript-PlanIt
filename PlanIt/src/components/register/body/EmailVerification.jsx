@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
 import { ChevronLeft } from 'lucide-react';
+import Button from '../../commons/Button/Button.jsx'
 
 const Container = styled.div`
     padding: 20px;
@@ -87,6 +88,7 @@ const ResendText = styled.div`
     text-align: center;
     font-size: 14px;
     color: #4B5563;
+    margin-bottom: 10px;
 `;
 
 const ResendButton = styled.button`
@@ -98,17 +100,6 @@ const ResendButton = styled.button`
     font-size: 14px;
 `;
 
-const SubmitButton = styled.button`
-    width: 100%;
-    padding: 12px;
-    background-color: #3B82F6;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 32px;
-`;
 
 const EmailVerification = ({ onNext }) => {
     const [formData, setFormData] = useState({
@@ -177,7 +168,7 @@ const EmailVerification = ({ onNext }) => {
                     </ResendButton>
                 </ResendText>
 
-                <SubmitButton type="submit">다음으로</SubmitButton>
+                <Button variant="primary" size="large" fullWidth type="submit">다음으로</Button>
             </form>
         </Container>
     );

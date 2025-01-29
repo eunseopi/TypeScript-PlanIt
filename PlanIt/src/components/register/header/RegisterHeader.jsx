@@ -2,9 +2,9 @@ import styled from '@emotion/styled'
 
 const HeaderContainer = styled.div `
     display: flex;
-    width: 100%;
+    width: 90%;
     position : relative;
-    margin: 70px 0;
+    margin: 60px auto;
 `;
 
 const Step = styled.div `

@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
 import { ChevronLeft } from 'lucide-react';
+import Button from '../../commons/Button/Button.jsx'
 
 
 const FormContainer = styled.div`
@@ -82,16 +83,16 @@ const Checkbox = styled.input`
     margin-right: 8px;
 `
 
-const Button = styled.button`
-    width: 100%;
-    padding: 12px;
-    background-color: #3B82F6;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-`
+// const Button = styled.button`
+//     width: 100%;
+//     padding: 12px;
+//     background-color: #3B82F6;
+//     color: white;
+//     border: none;
+//     border-radius: 8px;
+//     font-size: 16px;
+//     cursor: pointer;
+// `
 
 
 const BasicInform = ({ onNext }) => {
@@ -221,7 +222,7 @@ const BasicInform = ({ onNext }) => {
                     </CheckboxLabel>
                 </CheckboxGroup>
 
-            <Button onClick={onNext} type="submit"> 다음으로 </Button>
+            <Button variant="primary" size="large" fullWidth onClick={onNext} type="submit"> 다음으로 </Button>
         </FormContainer>
     )
 }
