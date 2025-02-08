@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { ChevronLeft } from 'lucide-react';
 
 const HeaderBox = styled.div`
-    max-width: 540px;
-    padding: 20px;
-    margin: 0 auto;
+    margin-bottom: 20px;
+    position: relative;
+    left: -20px;
 `
 
 const PrevButton = styled.button`

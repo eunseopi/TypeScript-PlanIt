@@ -1,8 +1,4 @@
-import axios from 'axios';
-
 import * as loading from './styles'
-import { useEffect } from "react";
-import { authApi } from '../../../api/auth';
 
 const LoadingScreen = () => {
 

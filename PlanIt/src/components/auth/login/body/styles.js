@@ -1,18 +1,5 @@
 import styled from '@emotion/styled';
 
-export const FormContainer = styled.div`
-    padding: 20px;
-    max-width: 500px;
-    margin: 0 auto;
-`
-
-export const Title = styled.h1`
-    margin-bottom: 40px;
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 1.3;
-`
-
 export const FormWrapper = styled.div`
 `
 
@@ -46,7 +33,7 @@ export const Input = styled.input`
 `
 
 export const ButtonWrapper = styled.div`
-    min-height: 35vh;
+    min-height: 44vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
