@@ -65,6 +65,10 @@ export const StyledButton = styled.button`
     ${props => props.fullWidth && `
         width: 100%;
     `}
+
+    ${props => props.ninetyWidth && `
+        width: 90%;
+    `}
     
     ${props => props.middleWidth && `
         width: 80%;
