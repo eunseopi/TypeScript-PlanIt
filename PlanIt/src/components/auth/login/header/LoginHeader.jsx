@@ -6,6 +6,17 @@ const HeaderBox = styled.div`
     margin-bottom: 20px;
     position: relative;
     left: -20px;
+
+    @media (max-width: 380px) {
+        position: fixed;
+        left: 20px;   
+        margin-bottom: 10px;
+    }
+
+    @media (max-width: 360px) {
+        position: relative;
+        left: 0;
+    }
 `
 
 const PrevButton = styled.button`
@@ -18,6 +29,11 @@ const PrevButton = styled.button`
     border: none;
     border-radius: 50%;
     cursor: pointer;
+
+    @media (max-width: 380px) {
+        width: 42px;
+        height: 42px;
+    }
 `;
 
 const LoginHeader = () => {

@@ -17,7 +17,6 @@ const LoginBody = ({
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('폼제출 확인')
         handleLogin();
     }
 

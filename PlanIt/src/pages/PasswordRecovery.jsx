@@ -1,56 +1,39 @@
-import { useState } from "react";
+import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthLayout from "../components/auth/AuthLayout";
 import FindPassword from "../components/auth/findPassword/FindPassword";
 import ChangePassword from "../components/auth/findPassword/ChangePassword";
 import PasswordChanged from "../components/auth/findPassword/PasswordChanged";
+import { useRecovery } from "../hooks/useRecovery";
+
+const titles = {
+    1: '비밀번호 찾기',
+    2: '비밀번호 변경'
+};
 
 const PasswordRecovery = () => {
-    const [step, setStep] = useState(1);
-    const [email, setEmail] = useState('');
+    const { state, handleNextStep } = useRecovery();
     const navigate = useNavigate();
 
-    const handleNextStep = (data) => {
-        if (step === 1) setEmail(data.email);
-        setStep((prevStep) => prevStep + 1);
-    }
+    const getTitle = () => titles[state.step] ?? '';
 
-    const getTitle = () => {
-        switch (step) {
-            case 1: 
-                return '비밀번호 찾기';
-            case 2:
-                return '비밀번호 변경';
-            default:
-                return'';
-        }
-    }
+    const steps = useMemo(() => [
+        <FindPassword email={state.email} onNext={handleNextStep} />,
+        <ChangePassword email={state.email} onNext={handleNextStep} />,
+        <PasswordChanged onReturn={() => navigate('/login')}/>
+    ], [state.email, navigate]);
 
-    const renderStep = () => {
-        switch (step) {
-            case 1:
-                return <FindPassword email={email} onNext={handleNextStep} />;
-            case 2: 
-                return <ChangePassword email={email} onNext={handleNextStep} />;
-            case 3:
-                return (
-                    <AuthLayout hideHeader hideTitle>
-                        <PasswordChanged onReturn={() => navigate('/login')}/>
-                    </AuthLayout>
-                );
-            default:
-                return null;
-        }
-    }
+    const renderStep = ()  => steps[state.step - 1] ?? null;
 
-    return step === 3 ? (
-        renderStep()
-    ) : (
-        <AuthLayout title={getTitle()}>
+    return (
+        <AuthLayout 
+            title={getTitle()}
+            hideHeader={state.step === 3}
+            hideTitle={state.step === 3}
+        >
             {renderStep()}
         </AuthLayout>
-    )
-
+    )  
 }
 
 export default PasswordRecovery;

@@ -1,12 +1,10 @@
 import Input from '../../commons/Input';
 import Button from '../../commons/Button';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
+import { Form, ButtonWrapper } from '../styles';
 
-const InputWrapper = styled.div`
-    min-height: 43.2vh;
-`
+const InputWrapper = styled.div``
 
 const VerificationBtn = styled.button`
     padding: 4px 10px;
@@ -33,16 +31,23 @@ const TextWrapper = styled.div`
     font-size: 14px;
 `
 
-const StyledLink = styled(Link)`
+const ResendButton = styled.button`
+    all: unset;
     color: #1E1E1E;
+    cursor: pointer;
+    text-decoration: underline;
 `
-
 
 const FindPassword = ({ email, onNext }) => {
     const [inputEmail, setInputEmail] = useState('');
     const [verificationCode, setVerificationCode] = useState('');
     const [isSent, setIsSent] = useState(false); //인증버튼 상태관리
     // const [error,setError] = useState('');
+
+    const handleEmailChange = (e) => {
+        setInputEmail(e.target.value.trim());
+        setIsSent(false); // 이메일 변경 시 인증버튼 활성화
+    }
 
     const handleSendCode = (e) => {
         e.preventDefault();
@@ -74,13 +79,16 @@ const FindPassword = ({ email, onNext }) => {
                     type='email'
                     value={inputEmail}
                     placeholder='abc@gmail.com'
-                    onChange={(e) => {setInputEmail(e.target.value)}}
+                    onChange={handleEmailChange}
                 />
-                <VerificationBtn type='submit' disabled={isSent}>
+                <VerificationBtn 
+                    type='submit' 
+                    disabled={isSent || !inputEmail.trim()} // 이메일 빈값일 경우 인증 버튼 비활성
+                >
                     {isSent ? '전송완료' : '인증하기'}
                 </VerificationBtn>
             </form>
-            <form onSubmit={handleVerifyCode}>
+            <Form onSubmit={handleVerifyCode}>
                 <InputWrapper>
                     <Input 
                         id='verification-code'
@@ -88,15 +96,25 @@ const FindPassword = ({ email, onNext }) => {
                         type='text'
                         value={verificationCode}   
                         placeholder='메일 내 4자리 숫자를 입력하세요.'
-                        onChange={(e) => {setVerificationCode(e.target.value)}}
+                        onChange={(e) => {setVerificationCode(e.target.value.trim())}}
                     />
                     <TextWrapper>
                         <p>메일을 받지 못하셨나요?</p>
-                        <StyledLink to="#" onClick={handleResendCode}>재전송하기</StyledLink>
+                        <ResendButton onClick={handleResendCode}>재전송하기</ResendButton> {/* 버튼으로 변경 */}
                     </TextWrapper>
                 </InputWrapper>
-                <Button type='submit' variant='primary' size='large' fullWidth>다음으로</Button>
-            </form>
+                <ButtonWrapper>
+                    <Button 
+                        type='submit' 
+                        variant='primary' 
+                        size='large' 
+                        fullWidth
+                        disabled={!verificationCode.trim()}
+                    >
+                        다음으로
+                    </Button>
+                </ButtonWrapper>
+            </Form>
         </>
     )
 }

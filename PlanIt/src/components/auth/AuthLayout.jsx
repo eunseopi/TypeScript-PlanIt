@@ -8,6 +8,22 @@ const AuthContainer = styled.div`
     display: flex;
     flex-direction: column;
     min-height: calc(100vh - 94px);
+
+    @media (max-height: 900px) {
+        padding: 30px 44px;
+        min-height: calc(100vh - 60px);
+    }
+
+    @media (max-width: 380px) {
+        padding: 30px 20px;
+        max-width: 100%;
+        min-height: calc(100vh - 60px);
+    }
+
+    @media (max-width: 360px) {
+        padding: 15px 20px;
+        justify-content: center;
+    }
 `
 
 const AuthTitle = styled.h1`
@@ -15,13 +31,17 @@ const AuthTitle = styled.h1`
     font-size: 32px;
     font-weight: 700;
     line-height: 1.3;
+
+    @media (max-width: 380px) {
+        text-align: center;
+    }
 `
 
 const AuthBody = styled.div`
     display: flex;
     flex-direction: column;
     flex: 1;
-    height: 62vh;
+    min-height: 62vh;
 `
 
 const AuthLayout = ({ hideHeader = false, title, hideTitle = false, children }) => {

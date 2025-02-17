@@ -3,20 +3,7 @@ import Button from "../../commons/Button";
 import { useState } from "react";
 import { Link } from "react-router-dom"
 import styled from "@emotion/styled";
-
-const Form = styled.form`
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    justify-content: space-between;
-`
-
-const ButtonWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    margin-top: auto;
-`
+import { Form, ButtonWrapper } from "../styles";
 
 const TextWrapper = styled.div`
     display: flex;
@@ -50,7 +37,7 @@ const FindAccount = ({ onNext }) => {
                 label='이메일 주소'
                 type='email'
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value.trim())} //입력값에서 공백 제거
                 placeholder='abc@gmail.com'
                 hasError={error && (error.includes("가입 이력"))}
                 error={error}
@@ -61,7 +48,16 @@ const FindAccount = ({ onNext }) => {
                     <p>아직 회원이 아니신가요?</p>
                     <StyledLink to="/">회원가입</StyledLink>
                 </TextWrapper>
-                <Button type='submit' variant='primary' size='large' fullWidth style={{ marginBottom: "120px"}}>다음으로</Button>
+                <Button 
+                    type='submit' 
+                    variant='primary' 
+                    size='large' 
+                    fullWidth 
+                    // style={{ marginBottom: "120px"}} 
+                    disabled={!email.trim()} // disabled 추가
+                >
+                    다음으로
+                </Button>
             </ButtonWrapper>
         </Form>
     )

@@ -6,6 +6,10 @@ export const LoginMenuBox = styled.ul`
     justify-content: space-between;
     margin-top: 40px;
     list-style: none;
+
+    @media (max-width: 380px) {
+        margin-top: 14px;
+    }
 `;
 
 export const Link = styled(RouterLink)`
