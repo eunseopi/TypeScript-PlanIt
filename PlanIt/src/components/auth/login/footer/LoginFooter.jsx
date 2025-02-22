@@ -1,20 +1,24 @@
 import styled from '@emotion/styled';
+import { Link as RouterLink } from 'react-router-dom';
 
 export const LoginMenuBox = styled.ul`
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
-    max-width: 500px;
-    padding: 40px 20px;
+    margin-top: 40px;
     list-style: none;
+
+    @media (max-width: 380px) {
+        margin-top: 14px;
+    }
 `;
 
-export const Link = styled.a`
+export const Link = styled(RouterLink)`
     display: block;
     padding: 8px;
     font-size: 14px;
     text-decoration: none;
     color: #808080;
+    cursor: pointer;
 `;
 
 const LOGIN_MENUS = [
@@ -28,7 +32,7 @@ const LoginFooter = () => {
         <LoginMenuBox>
             {LOGIN_MENUS.map((menu) => (
                 <li key={menu.name}>
-                    <Link href={menu.page} id={menu.name}>{menu.name}</Link>
+                    <Link to={menu.page} id={menu.name}>{menu.name}</Link>
                 </li>
             ))}
         </LoginMenuBox>
