@@ -1,8 +1,8 @@
-import LoginBody from "../components/login/body/LoginBody";
-import LoginFooter from "../components/login/footer/LoginFooter";
-import LoadingScreen from "../components/login/loading/LoadingScreen";
+import AuthLayout from "../components/auth/AuthLayout";
+import LoginBody from "../components/auth/login/body/LoginBody";
+import LoginFooter from "../components/auth/login/footer/LoginFooter";
+import LoadingScreen from "../components/auth/login/loading/LoadingScreen";
 import useLogin from "../hooks/useLogin";
-import LoginHeader from "../components/login/header/LoginHeader";
 
 const Login = () => {
     const {loading, ...loginProps} = useLogin();
@@ -13,9 +13,10 @@ const Login = () => {
                 <LoadingScreen {...loginProps}/>
             ):(
                 <>
-                    <LoginHeader />
-                    <LoginBody {...loginProps}/>
-                    <LoginFooter />
+                    <AuthLayout title="로그인/회원가입">
+                        <LoginBody {...loginProps}/>
+                        <LoginFooter />
+                    </AuthLayout>
                 </>
             )
         }

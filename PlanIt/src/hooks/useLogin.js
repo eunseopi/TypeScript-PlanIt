@@ -34,8 +34,8 @@ const useLogin = () => {
         }
     }, [navigate]);
 
-    const handleChangeEmail = (e) => setEmail(e.target.value);
-    const handleChangePassword = (e) => setPassword(e.target.value);
+    const handleChangeEmail = (e) => setEmail(e.target.value.trim());
+    const handleChangePassword = (e) => setPassword(e.target.value.trim());
 
     const handleLogin = async () => {
         if(error) setError(null);
