@@ -9,6 +9,7 @@ const Splash = ({ selectedLanguage, onLanguageSelect, onStart }) => {
         { code: 'ja', name: '日本語', flag: '🇯🇵' },
     ];
 
+
     return (
         <splash.ModalContent>
             <splash.ModalTitle>선호하는 언어가 있으신가요?</splash.ModalTitle>

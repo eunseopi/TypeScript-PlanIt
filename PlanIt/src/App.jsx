@@ -8,20 +8,22 @@ import "./styles/App.css"
 import SplashPage from "./pages/SplashPage.jsx";
 import Inquiry from "./components/splash/inquiry/Inquiry.jsx"
 import Findpwd from "./components/splash/findpwd/Findpwd.jsx";
+import Style_example from "./style_example.jsx";
 
 function App() {
 
   return (
     <Router>
         <Routes>
-            <Route path="/" element={<SplashPage/>}/>
-            <Route path='/login' element={<Login />} />
-            <Route path='/findAccount' element={<AccountRecovery />} />
-            <Route path='/findPW' element={<PasswordRecovery />} />
-            <Route path='/inquiry' element={<Inquiry/>} />
-            <Route path='/password' element={<Findpwd/>} />
-            <Route path="/welcome" element={<WelcomeScreen/>} />
-            <Route path="/" element={<Register/>} />
+            {/*<Route path="/" element={<SplashPage/>}/>*/}
+            {/*<Route path='/login' element={<Login />} />*/}
+            {/*<Route path='/findAccount' element={<AccountRecovery />} />*/}
+            {/*<Route path='/findPW' element={<PasswordRecovery />} />*/}
+            {/*<Route path='/inquiry' element={<Inquiry/>} />*/}
+            {/*<Route path='/password' element={<Findpwd/>} />*/}
+            {/*<Route path="/welcome" element={<WelcomeScreen/>} />*/}
+            {/*<Route path="/" element={<Register/>} />*/}
+            <Route path="/" element={<Style_example/>}/>
         </Routes>
     </Router>
   )
