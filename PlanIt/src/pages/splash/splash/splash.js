@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import '../../../../Fonts/static/pretendard.css'
+import "../../../Fonts/pretendard.css";
 
 const ModalContent = styled.div`
     display: flex;
