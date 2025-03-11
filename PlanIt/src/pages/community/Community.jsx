@@ -1,10 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
-import Storage from "./storage/Storage.jsx";
+import { useNavigate, useLocation } from "react-router-dom";
+import CommunityRoutes from "../../routes/CommunityRoutes.jsx";
 import Tabs from "../../components/commons/Tabs/Tabs.jsx";
-import Post from "./Post/Post.jsx";
-import TravelMate from "./travelMate/TravelMate.jsx";
 import CommunityHeader from "./Header/CommunityHeader.jsx";
 import { setTab } from "../../pages/community/storage/slice/CommunitySlice.jsx";
 
@@ -32,15 +30,11 @@ const Community = () => {
   };
 
   return (
-      <div>
-        <CommunityHeader />
-        <Tabs currentTab={currentTab} steps={steps} onTabClick={handleTabClick} />
-        <Routes>
-          <Route path="post" element={<Post />} />
-          <Route path="travelmate" element={<TravelMate />} />
-          <Route path="storage" element={<Storage />} />
-        </Routes>
-      </div>
+    <div>
+      <CommunityHeader />
+      <Tabs currentTab={currentTab} steps={steps} onTabClick={handleTabClick} />
+      <CommunityRoutes />
+    </div>
   );
 };
 
