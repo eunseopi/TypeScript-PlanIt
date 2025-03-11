@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
-import Card from "../../../components/community/Card.jsx";
-import TravelMate from "../../../components/community/TravelMate.jsx";
+import Card from "../../../components/units/community/Card.jsx";
+import TravelMate from "../../../components/units/community/TravelMate.jsx";
 import { useSelector } from "react-redux";
 
 const Header = styled.div`
