@@ -1,6 +1,9 @@
 # JS GitHub 레포지토리
 https://github.com/PlanItproject/FrontEnd
 
+# Figma 주소
+[피그마](https://www.figma.com/design/T3jZE80f2lurU9vl55VBa4/%EC%97%AC%ED%96%89%EC%95%B1?node-id=126-1901&p=f&t=nIetAWjFEnnXD9FG-0)
+
 # 🌍 **PlanIt: 세상을 계획하다, 새로운 세상으로 떠나다**
 
 ## ✨ **왜 PlanIt인가요?**  
@@ -89,7 +92,7 @@ PlanIt은 **여행의 모든 순간을 새롭게 정의**하는 글로벌 여행
 
 ## Git 커밋 메시지 규칙
 
-- 아래 규칙은 [블로그 참조][https://velog.io/@chojs28/Git-%EC%BB%A4%EB%B0%8B-%EB%A9%94%EC%8B%9C%EC%A7%80-%EA%B7%9C%EC%B9%99]
+- 아래 규칙은 [블로그 참조](https://velog.io/@chojs28/Git-%EC%BB%A4%EB%B0%8B-%EB%A9%94%EC%8B%9C%EC%A7%80-%EA%B7%9C%EC%B9%99)
 
 ### Type
 - **`feat`**: 새로운 기능 추가.
