@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import "../../../Fonts/pretendard.css";
 
 const CommunityHeaderContainer = styled.div`
   display: flex;
