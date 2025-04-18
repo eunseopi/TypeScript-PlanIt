@@ -1,3 +1,6 @@
+# JS GitHub 레포지토리
+https://github.com/PlanItproject/FrontEnd
+
 # 🌍 **PlanIt: 세상을 계획하다, 새로운 세상으로 떠나다**
 
 ## ✨ **왜 PlanIt인가요?**  
