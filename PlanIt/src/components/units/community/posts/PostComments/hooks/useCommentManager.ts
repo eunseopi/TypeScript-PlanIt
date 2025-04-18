@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
-import { commentApi } from "../../../../../../api/comment";
+import { useCallback, useMemo, useState } from "react";
+import { commentApi } from "../../../../../../api/comment.ts";
 
 interface CommentApi {
   addComment: (data: { content: string }) => Promise<Comment>;
